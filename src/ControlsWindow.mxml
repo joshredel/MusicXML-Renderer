@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Window xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" 
+		  width="200" height="300" showStatusBar="false" 
+		  resizable="false">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import org.cim.OverlayRenderer;
+			
+			/**
+			 * The renderer we are controlling.
+			 */
+			public var renderer:OverlayRenderer;
+			
+			/**
+			 * Changes the zoom of the overlay.
+			 */
+			private function zoomChanged(event:Event):void {
+				if(renderer) {
+					renderer.scaleX = zoomer.value / 100;
+					renderer.scaleY = zoomer.value / 100;
+				}
+			}
+		]]>
+	</fx:Script>
+	
+	<s:VGroup paddingTop="8" paddingLeft="8">
+		<s:Label text="Zoom:" />
+		<s:HSlider id="zoomer" minimum="10" maximum="100" stepSize="5" 
+				   value="100" change="zoomChanged(event)" />
+		
+		<s:Button label="Quit" click="NativeApplication.nativeApplication.exit();" />
+	</s:VGroup>
+</s:Window>

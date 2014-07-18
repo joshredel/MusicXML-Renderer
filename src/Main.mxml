@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   xmlns:cim="org.cim.*"
+					   showStatusBar="false" width="900" height="700"
+					   title="MusicXML Renderer" keyUp="scroll(event)"
+					   creationComplete="center()" xmlns:local="*">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			
+			import org.cim.old.MusicXMLParser;
+			import org.cim.old.ScoreRenderer;
+			
+			/**
+			 * The XML that we load from the selected music file.
+			 */
+			private var musicXML:XML;
+			
+			
+			/**
+			 * Centers the screen
+			 */
+			private function center():void {
+				nativeWindow.x = (Screen.mainScreen.bounds.width - nativeWindow.width) / 2;
+				nativeWindow.y = (Screen.mainScreen.bounds.height - nativeWindow.height) / 2;
+			}
+			
+			/**
+			 * Handles a click on the open and draw button.
+			 * Asks the user to open a file.
+			 */
+			private function openAndDraw():void {
+				// prepare the file chooser and listen for a file to be selected
+				var fileChooser:File = File.desktopDirectory;
+				fileChooser.addEventListener(Event.SELECT, requestXML);
+				
+				// create filters so only an XML file is opened and open the dialog
+				var xmlFilter:FileFilter = new FileFilter("MusicXML", "*.xml;*.mxml");
+				fileChooser.browseForOpen("Open", [xmlFilter]);
+			}
+			
+			/**
+			 * Handles the user selecting an actual file to open.
+			 * Requests the XML file from the file system as chosen 
+			 * by the user.
+			 */
+			private function requestXML(e:Event):void {
+				// get the file we want to open
+				var desiredFile:File = e.target as File;
+				
+				// hide the button
+				openButton.enabled = false;
+				openButton.alpha = 0;
+				//openButton.visible = false; // setting it not visible disables scrolling all together...
+				
+				// request that file
+				var loader:URLLoader = new URLLoader();
+				loader.addEventListener(IOErrorEvent.IO_ERROR, failedDrawing);
+				loader.addEventListener(Event.COMPLETE, finishLoading);
+				//loader.load(new URLRequest("assets/straightahead/trumpet1.xml"));
+				loader.load(new URLRequest(desiredFile.url));
+			}
+			
+			/**
+			 * Handles the completion of the loading of the XML file.
+			 * Stores the XML and asks the renderer to prepare the score.
+			 */
+			private function finishLoading(e:Event):void {
+				// get the xml from the event (what was loaded)
+				musicXML = new XML(e.target.data);
+				
+				// create the rendering object that listens for parse events
+				renderer.prepareScore(musicXML, false);
+				
+				// show the controls window
+				var controlsWindow:ControlsWindow = new ControlsWindow();
+				controlsWindow.open();
+				controlsWindow.nativeWindow.x = this.nativeWindow.bounds.right;
+				controlsWindow.nativeWindow.y = this.nativeWindow.y;
+				controlsWindow.renderer = renderer;
+			}
+			
+			/**
+			 * Handles a failed load of the XML file.
+			 */
+			private function failedDrawing(data:IOErrorEvent):void {
+				trace(data.toString());
+				Alert.show("Failed to open the desired file.\n\nReason:\n" + data.toString(), "File Open Error");
+			}
+			
+			/**
+			 * Handles keyboard presses.
+			 * Scrolls up and down if the key is an arrow.
+			 */
+			private function scroll(e:KeyboardEvent):void {
+				if(e.keyCode == Keyboard.DOWN) {
+					renderer.y -= 50;
+				} else if (e.keyCode == Keyboard.UP) {
+					renderer.y += 50;
+				}
+			}
+		]]>
+	</fx:Script>
+	
+	<s:HGroup>
+		<s:Button id="openButton" label="Open and Draw" click="openAndDraw()" />
+	</s:HGroup>
+	<cim:OverlayRenderer id="renderer" width="900" height="680" x="0" y="50" />
+</s:WindowedApplication>

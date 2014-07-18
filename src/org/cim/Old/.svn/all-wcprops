@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old
+END
+ParserProgressListener.as
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/ParserProgressListener.as
+END
+Pitch.as
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Pitch.as
+END
+Direction.as
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Direction.as
+END
+Parser.as
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Parser.as
+END
+Measure.as
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Measure.as
+END
+Tempo.as
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Tempo.as
+END
+KeySignature.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/KeySignature.as
+END
+ScoreRenderer.as
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/ScoreRenderer.as
+END
+ParserListener.as
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/ParserListener.as
+END
+Note.as
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Note.as
+END
+Voice.as
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Voice.as
+END
+MusicXMLParser.as
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/MusicXMLParser.as
+END
+StringBuffer.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/StringBuffer.as
+END
+System.as
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/System.as
+END
+Page.as
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Page.as
+END
+TimeSignature.as
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/TimeSignature.as
+END
+Clef.as
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Clef.as
+END
+Instrument.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Instrument.as
+END
+Margins.as
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sresvn/src/!svn/ver/3181/openorchestra/MuiscXML%20Renderer/src/org/cim/old/Margins.as
+END
